@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Recommender</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: white;
+            display: flex;
+            height: 100vh;
+        }
+
+        .left-panel {
+            width: 35%;
+            padding: 60px 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .left-panel h1 {
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 28px;
+        }
+
+        .left-panel form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .left-panel input {
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .left-panel button {
+            background-color: #00c6ff;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .left-panel button:hover {
+            background-color: #0072ff;
+        }
+
+        .right-panel {
+            width: 65%;
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: flex-start;
+            overflow-y: auto;
+        }
+
+        .card {
+            background-color: #1c1f2b;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            width: calc(33.333% - 20px);
+            min-width: 200px;
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .card p {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .left-panel, .right-panel {
+                width: 100%;
+            }
+            .card {
+                width: 100%;
+            }
+            body {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="left-panel">
+        <h1>Find Your Recommendations</h1>
+        <form action="/" method="post">
+            <input type="text" name="user_id" placeholder="Enter User ID" required>
+            <button type="submit">Get Recommendations</button>
+        </form>
+    </div>
+
+    <div class="right-panel">
+        {% if recommendations %}
+            {% for movie in recommendations %}
+                <div class="card">
+                    <h3>{{ movie }}</h3>
+                    <p>Recommended for you</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p style="font-size: 18px;">Enter a User ID to get personalized movie suggestions.</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
