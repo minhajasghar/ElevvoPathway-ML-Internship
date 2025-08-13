@@ -10,7 +10,7 @@ This project predicts students' **exam scores** based on input features such as 
 ## Dataset  
 The dataset is available in the `data/` folder.  
 
-## 🛠Installation  
+## Installation  
 1. Clone the repository:  
    ```bash
    git clone https://github.com/minhajasghar/ML-Projects.git
