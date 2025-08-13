@@ -14,4 +14,4 @@ The dataset is available in the `data/` folder.
 1. Clone the repository:  
    ```bash
    git clone https://github.com/minhajasghar/ML-Projects.git
-   cd ML-Projects/Student Performance Prediction
+   cd ElevvoPathway-ML-Internship/Student Score Prediction
