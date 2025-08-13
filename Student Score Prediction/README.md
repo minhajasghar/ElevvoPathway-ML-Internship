@@ -1,4 +1,4 @@
-# Student Performance Measure 
+# Student Score Measure 
 
 This project predicts students' **exam scores** based on input features such as study hours, parental education, and other factors. It utilizes **Machine Learning Regression Models** to estimate performance.  
 
