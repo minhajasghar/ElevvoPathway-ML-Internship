@@ -1,0 +1,5 @@
+Pandas
+NumPy
+Scikit-learn
+Keras
+Librosa
