@@ -4,3 +4,5 @@ NumPy
 Scikit-learn
 Matplotlib
 Seaborn
+xgboost
+statsmodels
